@@ -2,5 +2,9 @@
     {
         "scan_time": "2026-05-18 09:56:10",
         "status": "No devices discovered on this segment"
+    },
+    {
+        "scan_time": "2026-05-18 10:02:56",
+        "status": "No devices discovered"
     }
 ]
