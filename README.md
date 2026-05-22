@@ -71,12 +71,3 @@ Sürüm: v1.3.0 (Nihai Akademik Güncelleme)
 Dosyayı yapıştırdıktan sonra **`CTRL + O`**, **`ENTER`** ve **`CTRL + X`** ile kaydetip çık.
 
 ---
-
-### 2. Adım: GitHub'a Gönder (Son Fırlatış 🚀)
-
-Şimdi lokalde güncellediğimiz bu jilet gibi dokümanı GitHub reposuna pushlayalım:
-
-```bash
-git add README.md
-git commit -m "Docs: Upgraded README.md to v1.3.0 with CVE, Remediation and HTML report specs"
-git push origin main
