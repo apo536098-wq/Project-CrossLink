@@ -10,5 +10,67 @@
     {
         "scan_time": "2026-05-18 10:04:34",
         "status": "No devices discovered"
+    },
+    {
+        "tarama_zamani": "2026-05-22 17:50:03",
+        "tarama_bulgulari": [
+            {
+                "ip": "10.158.146.15",
+                "acik_portlar": [],
+                "zafiyetler": []
+            },
+            {
+                "ip": "10.158.146.165",
+                "acik_portlar": [
+                    {
+                        "port": 22,
+                        "banner": "SSH-2.0-OpenSSH_10.3p1 Debian-1"
+                    },
+                    {
+                        "port": 80,
+                        "banner": "HTTP/1.1 200 OK"
+                    }
+                ],
+                "zafiyetler": [
+                    {
+                        "cve": "CVE-202X-1234",
+                        "risk": "KRİTİK (Uzakta Kod Çalıştırma - RCE)",
+                        "acıklama": "Dropbear SSH servisinin bu sürümünde bellek taşması sonucu yetkisiz erişim sağlanabilir.",
+                        "cozum": "Cihazın üretici yazılımını (Firmware) güncelleyin veya SSH servisini tamamen kapatın."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "tarama_zamani": "2026-05-22 17:51:42",
+        "tarama_bulgulari": [
+            {
+                "ip": "10.158.146.15",
+                "acik_portlar": [],
+                "zafiyetler": []
+            },
+            {
+                "ip": "10.158.146.165",
+                "acik_portlar": [
+                    {
+                        "port": 22,
+                        "banner": "SSH-2.0-OpenSSH_10.3p1 Debian-1"
+                    },
+                    {
+                        "port": 80,
+                        "banner": "HTTP/1.1 200 OK"
+                    }
+                ],
+                "zafiyetler": [
+                    {
+                        "cve": "CVE-202X-1234",
+                        "risk": "KRİTİK (Uzakta Kod Çalıştırma - RCE)",
+                        "acıklama": "Dropbear SSH servisinin bu sürümünde bellek taşması sonucu yetkisiz erişim sağlanabilir.",
+                        "cozum": "Cihazın üretici yazılımını (Firmware) güncelleyin veya SSH servisini tamamen kapatın."
+                    }
+                ]
+            }
+        ]
     }
 ]
