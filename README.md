@@ -50,9 +50,10 @@
 </clipPath>
 </defs>
 </svg>
-
-
 <img width="211" height="80" alt="isu_logo_tr-1" src="https://github.com/user-attachments/assets/d24e6dfa-4d01-4bfb-9068-c6dcd4a3334f" />
+
+
+
 # 🛰️ Proje Özeti ve Operasyonel Analiz Raporu: Project CrossLink
 
 **Geliştirici:** Abdulkadir Erkan (Kadir)  
