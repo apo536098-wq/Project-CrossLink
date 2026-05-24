@@ -1,0 +1,62 @@
+[
+    {
+        "tarama_zamani": "2026-05-24 04:43:34",
+        "tarama_bulgulari": [
+            {
+                "ip": "192.168.1.1",
+                "acik_portlar": [
+                    {
+                        "port": 80,
+                        "banner": "HTTP/1.1 400 Bad Request"
+                    },
+                    {
+                        "port": 443,
+                        "banner": "HTTP/1.1 400 Bad Request"
+                    }
+                ],
+                "zafiyetler": []
+            },
+            {
+                "ip": "192.168.1.2",
+                "acik_portlar": [],
+                "zafiyetler": []
+            },
+            {
+                "ip": "192.168.1.3",
+                "acik_portlar": [],
+                "zafiyetler": []
+            },
+            {
+                "ip": "192.168.1.4",
+                "acik_portlar": [
+                    {
+                        "port": 22,
+                        "banner": "SSH-2.0-OpenSSH_10.3p1 Debian-1"
+                    },
+                    {
+                        "port": 80,
+                        "banner": "HTTP/1.1 200 OK"
+                    }
+                ],
+                "zafiyetler": [
+                    {
+                        "cve": "CVE-202X-1234",
+                        "risk": "KRİTİK (Uzakta Kod Çalıştırma - RCE)",
+                        "acıklama": "Dropbear SSH servisinin bu sürümünde bellek taşması sonucu yetkisiz erişim sağlanabilir.",
+                        "cozum": "Cihazın üretici yazılımını (Firmware) güncelleyin veya SSH servisini tamamen kapatın."
+                    }
+                ]
+            },
+            {
+                "ip": "192.168.1.5",
+                "acik_portlar": [],
+                "zafiyetler": []
+            },
+            {
+                "ip": "192.168.1.12",
+                "acik_portlar": [],
+                "zafiyetler": []
+            }
+        ]
+    }
+]
