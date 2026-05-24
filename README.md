@@ -114,3 +114,24 @@ Kod yapısı çorba bir düzende değil, hocamızın belirttiği gibi **kısa pa
                         │
                         ▼
 [ Bitiş: Raporları Tarayıcıda Aç & GitHub'a Pushla ]
+
+
+---
+
+
+### 🕵️‍♂️ 3. POLİS / DEDEKTİF MANTIĞIYLA SİBER ANALİZ EŞLEŞTİRMESİ
+
+
+Hocamızın paylaştığı metodoloji uyarınca, projenin siber güvenlik felsefesi şu şekildedir:
+
+Olay Yeri (Network Interface): yerel_ip_blogu_bul() fonksiyonu ile ağ kartının bağlı olduğu lokal IP bloğu dinamik olarak izlemeye alınır.
+
+Delil (Raw Bytes -> ASCII): Ağ kapılarından dönen ham byte verileri çözülerek anlamlı servis kimlik kartlarına (Banner) dönüştürülür.
+
+Tercüman (Soket Çevirisi): Herhangi bir hazır kütüphane yerine Python socket kütüphanesi siber tercüman olarak koşturulur.
+
+Kanıt (Zafiyet Deseni Tespiti): Eldeki servis delilleri, kod içindeki gömülü zafiyet sabıka kaydı sözlüğü (CVE_VERITABANI) ile eşleştirilerek anomaliler teşhis edilir (CVE-2026-5112 vb.).
+
+Tutuklama & Sıkılaştırma (Remediation): Keşfedilen riskler analiste sadece raporlanmaz; sikilastirma_rehberi_bas() katmanıyla sistemin tamamen izole edilmesi veya yamalanması için defansif çözüm yolları (Hardening Guide) sunulur.
+
+
