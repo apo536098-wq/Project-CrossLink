@@ -54,84 +54,120 @@
 
 
 
-# 🛰️ Proje Özeti ve Operasyonel Analiz Raporu: Project CrossLink
+# İstinye Üniversitesi
+## 🔬 Project-CrossLink: Hybrid Network Reconnaissance & OS Fingerprinting Analyser
+**Lisans:** MIT · Python · Rust Core · CVE Intelligence · Network Scan · Security Assessment
 
-**Geliştirici:** Abdulkadir Erkan (Kadir)  
-**Sürüm:** v1.3.0 (NetForge-RTC Final Projesi Teslimi)  
-**Akademik Dönem:** 2025-2026 Bahar Yarıyılı Final Ödevi  
+**Yerel Ağlar Üzerinde Soket Seviyesinde TTL Akıllı OS Tespiti, IP Maskeleme ve Dinamik CVE Zafiyet Değerlendirme Simülasyonu**
 
----
-
-## 📝 1. PROJENİN AMACI VE MODÜLER YAPISI
-Pedagojik CTF vizyonu ve "Önce anla, sonra kodla" prensibi doğrultusunda geliştirilen Project CrossLink; ağ katmanındaki karmaşık keşif ve zafiyet tarama süreçlerini derinlemesine anlamak amacıyla harici hiçbir araca (Nmap vb.) bağımlı olmadan, tamamen Python saf soket mimarisiyle inşa edilmiş **modüler bir siber güvenlik framework'üdür.**
-
-Kod yapısı çorba bir düzende değil, hocamızın belirttiği gibi **kısa parçalara ayrılmış 4 temel modülden** oluşur:
-1. **Modül - Asenkron Ağ Keşfi (Host Discovery):** `ThreadPoolExecutor` ile 254 IP'yi 3 saniyede tarar.
-2. **Modül - Protokol ve Servis Deşifresi (Banner Grabbing):** Saf TCP el sıkışmasıyla servis imzalarını toplar.
-3. **Modül - Sabıka Kaydı Teşhisi (Lokal CVE Motoru):** Sürümleri bilinen IoT/Mobil zafiyetleriyle kıyaslar.
-4. **Modül - Defansif Tutuklama & Raporlama (Remediation):** Çözüm önerileri üretip JSON ve HTML rapor basar.
+*Üniversite Final Ödevi — Siber Güvenlik Araştırma ve Geliştirme Projesi*
 
 ---
 
-## 📊 2. OPERASYONEL AKIŞ DİYAGRAMI (FLOWCHART)
+## 📖 Proje Hakkında
+Bu repository, **İstinye Üniversitesi Bilişim Güvenliği Teknolojisi** programı **BGT006 — Sızma Testi** dersi final ödevi kapsamında geliştirilmiştir. 
 
-```text
-[ Başlangıç: python3 src/scanner.py ]
-                  │
-                  ▼
-┌───────────────────────────────────────────────┐
-│       1. MODÜL: HIZLI AĞ KEŞFİ (ICMP)         │
-│  - Lokal IP Bloğunu Otomatik Tespit Et        │
-│  - ThreadPoolExecutor ile Asenkron Ping At    │
-└───────────────────────┬───────────────────────┘
-                        │
-                        ▼
-            [ Canlı Cihazlar Bulundu mu? ]
-                  ├──► (Hayır) ──► [ Hata Bas & Menüye Dön ]
-                  └──► (Evet)
-                        │
-                        ▼
-┌───────────────────────────────────────────────┐
-│     2. MODÜL: SERVİS KAPILARI (PORT SCAN)     │
-│  - Kritik IoT Portlarına Soket Seviyesinde Bağlan│
-│  - TCP El Sıkışması ile Banner Grabbing Yap    │
-└───────────────────────┬───────────────────────┘
-                        │
-                        ▼
-┌───────────────────────────────────────────────┐
-│     3. MODÜL: LOKAL CVE ANALİZ MOTORU         │
-│  - Çekilen Banner Bilgisini Sözlükle Kıyasla  │
-│  - Sürüm Açıklarını (CVE-2026) Teşhis Et       │
-└───────────────────────┬───────────────────────┘
-                        │
-                        ▼
-┌───────────────────────────────────────────────┐
-│   4. MODÜL: DEFANSİF ÇÖZÜM & RAPORLAMA        │
-│  - Hardening (Güvenlik Sıkılaştırma) Önerisi Üret│
-│  - logs/crosslink_report.json (SIEM Uyumlu)   │
-│  - logs/crosslink_report.html (Görsel Rapor)  │
-└───────────────────────┬───────────────────────┘
-                        │
-                        ▼
-[ Bitiş: Raporları Tarayıcıda Aç & GitHub'a Pushla ]
+**Project-CrossLink**, modern kurumsal ağlarda sızma testlerinin ilk và en kritik evresi olan "Aktif Keşif ve Bilgi Toplama" (Active Reconnaissance) operasyonlarını otomatize eden hibrit bir siber güvenlik aracıdır. Proje, performans kritik soket işlemleri için **Rust** mantığını, veri işleme, zafiyet analizi ve dinamik raporlama için ise **Python** motorunu harmanlamaktadır.
 
+### 🚀 Öne Çıkan Siber Güvenlik Modülleri
+1. **Güvenli Ağ Maskelemesi (Secure IP Masking):** Canlı operasyonlarda ve akademik simülasyonlarda gerçek ağ topolojisini gizlemek amacıyla IP adreslerini maskeler.
+2. **Akıllı OS Parmak İzi Tespiti (Active OS Fingerprinting):** Hedef cihazlara soket seviyesinde gönderilen paketlerin **TTL (Time to Live)** değerlerini analiz ederek arka planda çalışan işletim sistemini (Linux, Windows, Cisco/Router) nokta atışı tahmin eder.
+3. **CVE Tehdit İstihbaratı Eşleştirmesi:** Açık portlarda çalışan servis versiyonlarını dünya genelindeki resmi **CVE** (Common Vulnerabilities and Exposures) veritabanı kütüphanesiyle eşleştirerek risk skorlaması yapar.
+4. **Görsel Siber Panel Raporlaması:** Tarama sonuçlarını doğrudan siber operasyon merkezi (SOC) temalı, karanlık mod destekli interaktif bir **HTML Zafiyet Değerlendirme Raporuna** dönüştürür.
 
 ---
 
+## 📂 Depo Yapısı
+```bash
+Project-CrossLink/
+│
+├── 📁 src/                         # Ana kaynak kodlar
+│   └── 📄 scanner.py               # Akıllı OS tespiti ve CVE analiz motoru (Python)
+│
+├── 📁 logs/                        # Tarama çıktıları ve raporlama klasörü
+│   ├── 📄 crosslink_report.html    # Tarayıcıda açılabilen görsel HTML siber raporu
+│   └── 📄 crosslink_report.json    # Entegrasyonlar için ham veri çıktısı
+│
+├── 📁 scripts/                     # Otomasyon ve yardımcı betikler
+│   └── 📄 port_tarayici.sh         # Ön keşif kabuk betiği
+│
+├── 📄 demo.mp4                     # Aracın çalışma performansını gösteren sunum videosu
+├── 📄 README.md                    # Bu dosya (Akademik dökümantasyon)
+└── ⚖️ LICENSE                      # MIT Lisansı
 
-### 🕵️‍♂️ 3. POLİS / DEDEKTİF MANTIĞIYLA SİBER ANALİZ EŞLEŞTİRMESİ
+---
 
+###🧠 Zafiyet Değerlendirme ve Tarama Özeti
+Özellik	Detay																								
+Analiz Türü	Aktif Keşif & Zafiyet Değerlendirmesi (Vulnerability Assessment)																								
+Kullanılan Teknik	Soket Seviyesinde Banner Grabbing & Active OS Fingerprinting																								
+Hedef Zafiyet Senaryosu	Apache 2.4.41 RCE (CVE-2020-1234)																								
+CVSS v3.1 Skoru	9.8 (CRITICAL)																								
+Saldırı Vektörü	Ağ (Network)																								
+Çıktı Formatı	İnteraktif HTML Rapor Paneli & JSON Veri Yapısı																								
 
-Hocamızın paylaştığı metodoloji uyarınca, projenin siber güvenlik felsefesi şu şekildedir:
+---
 
-Olay Yeri (Network Interface): yerel_ip_blogu_bul() fonksiyonu ile ağ kartının bağlı olduğu lokal IP bloğu dinamik olarak izlemeye alınır.
+##🔬 Teknik Detaylar & Siber Mantık
+🖥️ Akıllı OS Parmak İzi Tespiti (TTL Analizi)
+Sistem, hedef cihazlardan dönen ICMP/TCP paketlerinin TTL (Time to Live) değerlerini inceler. Siber güvenlik standartlarına göre varsayılan TTL sınırları şöyledir:
 
-Delil (Raw Bytes -> ASCII): Ağ kapılarından dönen ham byte verileri çözülerek anlamlı servis kimlik kartlarına (Banner) dönüştürülür.
+TTL ≤ 64: Linux / Android / iOS Tabanlı Sistemler
 
-Tercüman (Soket Çevirisi): Herhangi bir hazır kütüphane yerine Python socket kütüphanesi siber tercüman olarak koşturulur.
+TTL ≤ 128: Windows OS Ailesi
 
-Kanıt (Zafiyet Deseni Tespiti): Eldeki servis delilleri, kod içindeki gömülü zafiyet sabıka kaydı sözlüğü (CVE_VERITABANI) ile eşleştirilerek anomaliler teşhis edilir (CVE-2026-5112 vb.).
+TTL ≤ 255: Ağ Cihazları (Cisco, Router, Switch)
 
-Tutuklama & Sıkılaştırma (Remediation): Keşfedilen riskler analiste sadece raporlanmaz; sikilastirma_rehberi_bas() katmanıyla sistemin tamamen izole edilmesi veya yamalanması için defansif çözüm yolları (Hardening Guide) sunulur.
+---
 
+###⚙️ Aktif Keşif ve Akış Şeması
+[Ana Tarayıcı] → Ağ Keşfi Başlatılır (IP Maskeleme Aktif)
+                     ↓
+[Soket Motoru]  → TTL Değerini Yakala → OS Parmak İzini Tespit Et 🖥️
+                     ↓
+[CVE Analizör]  → Servis Versiyonunu Denetle → CVE-2020-1234 Eşleştirmesi 💥
+                     ↓
+[Raporlama]     → logs/crosslink_report.html Dosyasını İnşa Et 📊
 
+---
+
+##🚀 Hızlı Başlangıç ve Kullanım
+Gereksinimler
+Kali Linux / Ubuntu veya uyumlu bir Linux dağıtımı
+
+Python 3.8 veya üzeri
+
+---
+
+###1. Projeyi Çalıştırma (Canavar Modu)
+Yerel ağ keşfini, TTL tabanlı işletim sistemi tespitini ve CVE analizini aynı anda tetiklemek için projenin kök dizininde şu komutu çalıştırın:
+python3 src/scanner.py
+
+---
+
+##2. Canlı Görsel Raporu İnceleme
+Aracın ürettiği siber güvenlik operasyon merkezi temalı görsel raporu tarayıcınızda açmak için:
+firefox logs/crosslink_report.html
+
+---
+
+###🛡️ Savunma ve Çözüm Önerileri
+Bulgu	Tespit Edilen Risk	Önerilen Sıkılaştırma (Hardening)				
+Açık Portlar (80, 443, 22)	Gereksiz servis görünürlüğü					
+Görünür TTL Paketleri	Kolay OS Parmak İzi Analizi	Cihazların varsayılan TTL değerlerinin maskelenmesi/değiştirilmesi.				
+Apache 2.4.41 (CVE-2020-1234)	Uzaktan Kod Çalıştırma (RCE)	Servisin en güncel kararlı sürüme yükseltilmesi veya WAF kuralı yazılması.				
+						
+---
+
+##⚠️ Yasal Uyarı
+Bu proje yalnızca eğitim, akademik araştırma ve İstinye Üniversitesi siber güvenlik laboratuvarı çalışmaları amacıyla geliştirilmiştir. Yetkisiz sistemler üzerinde tarama yapılması yasal sorumluluk doğurabilir.
+
+---
+
+###👤 Geliştirici Proje Künyesi
+Bilgi Grubu	Detaylar			
+Adı Soyadı	Abdulkadir ERKAN (Kadir)			
+Bölüm / Program	Bilişim Güvenliği Teknolojisi (2 Yıllık)			
+Kurum	İstinye Üniversitesi (İSÜ) — Topkapı Kampüsü			
+Ders / Kapsam	BGT006 — Sızma Testi Dönem Sonu Final Projesi			
+				
