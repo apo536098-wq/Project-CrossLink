@@ -24,33 +24,21 @@
         "zafiyetler": []
     },
     {
-        "ip": "10.0.0.4",
+        "ip": "10.0.0.5",
         "acik_portlar": [
             {
                 "port": 22,
-                "banner": "Dropbear_2026.1"
+                "banner": "SSH-2.0-OpenSSH_10.3p1 Debian-1"
             },
             {
                 "port": 80,
                 "banner": "HTTP/1.1 200 OK"
             }
         ],
-        "zafiyetler": [
-            {
-                "cve": "CVE-202X-1234",
-                "risk": "KRİTİK (Uzakta Kod Çalıştırma - RCE)",
-                "acıklama": "Dropbear SSH servisinin bu sürümünde bellek taşması sonucu yetkisiz erişim sağlanabilir.",
-                "cozum": "Cihazın üretici yazılımını (Firmware) güncelleyin veya SSH servisini tamamen kapatın."
-            }
-        ]
-    },
-    {
-        "ip": "10.0.0.11",
-        "acik_portlar": [],
         "zafiyetler": []
     },
     {
-        "ip": "10.0.0.12",
+        "ip": "10.0.0.7",
         "acik_portlar": [],
         "zafiyetler": []
     }

@@ -1,0 +1,32 @@
+import subprocess
+import platform
+
+def isletim_sistemi_tahmin_et(ip_adresi):
+    """
+    Hedef IP're tek bir ping atarak TTL değerinden işletim sistemini tahmin eder.
+    """
+    try:
+        # İşletim sistemine göre ping parametresini ayarla (-c Linux/Mac, -n Windows için)
+        parametre = "-n" if platform.system().lower() == "windows" else "-c"
+        komut = ["ping", parametre, "1", ip_adresi]
+        
+        # Komutu çalıştır ve çıktıyı al
+        cikti = subprocess.check_output(komut, stderr=subprocess.STDOUT, universal_newlines=True)
+        
+        # Çıktı içinden TTL= değerini ara
+        for satir in cikti.splitlines():
+            if "ttl=" in satir.lower():
+                # TTL değerini sayı olarak çek
+                ttl_parca = [p for p in satir.split() if "ttl=" in p.lower()][0]
+                ttl_degeri = int("".join(filter(str.isdigit, ttl_parca)))
+                
+                # Siber TTL eşleşmesi
+                if ttl_degeri <= 64:
+                    return "Linux / Mobil (Android-iOS)"
+                elif ttl_degeri <= 128:
+                    return "Windows OS"
+                else:
+                    return "Network Cihazı (Router/Cisco)"
+    except Exception:
+        pass
+    return "Bilinmeyen Sistem"
