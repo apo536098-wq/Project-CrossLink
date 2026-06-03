@@ -304,13 +304,6 @@ google-chrome logs/crosslink_report.html
 </div>
 """
 
-# Write the README file
-with open('/mnt/agents/output/README.md', 'w', encoding='utf-8') as f:
-    f.write(readme_content)
-
-print("✅ README.md başarıyla oluşturuldu!")
-print(f"📁 Dosya konumu: /mnt/agents/output/README.md")
-print(f"📊 Dosya boyutu: {len(readme_content)} karakter")
 
 
 
