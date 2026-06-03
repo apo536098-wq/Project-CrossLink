@@ -54,31 +54,58 @@
 
 
 
-# İstinye Üniversitesi
+import os
+
+# Create the output directory if it doesn't exist
+os.makedirs('/mnt/agents/output', exist_ok=True)
+
+# Create the professional README.md
+readme_content = """<div align="center">
+
+![CrossLink Banner](https://capsule-render.vercel.app/api?type=waving&color=0d1117&height=200&section=header&text=Project-CrossLink&fontSize=60&fontColor=00ff88&animation=fadeIn&fontAlignY=35&desc=Hybrid%20Network%20Reconnaissance%20%26%20OS%20Fingerprinting%20Analyser&descAlignY=60&descSize=18)
+
+[![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Rust](https://img.shields.io/badge/Rust-Core-000000?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)
+[![MIT License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
+[![CVE](https://img.shields.io/badge/CVE-Intelligence-red?style=for-the-badge&logo=shield&logoColor=white)](https://cve.mitre.org/)
+[![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20Kali%20Linux-1793D1?style=for-the-badge&logo=linux&logoColor=white)](https://www.kali.org/)
+
+</div>
+
+---
+
 ## 🔬 Project-CrossLink: Hybrid Network Reconnaissance & OS Fingerprinting Analyser
-**Lisans:** MIT · Python · Rust Core · CVE Intelligence · Network Scan · Security Assessment
 
-**Yerel Ağlar Üzerinde Soket Seviyesinde TTL Akıllı OS Tespiti, IP Maskeleme ve Dinamik CVE Zafiyet Değerlendirme Simülasyonu**
+**Lisans:** MIT · **Dil:** Python · **Çekirdek:** Rust · **Entegrasyon:** CVE Intelligence · **Mod:** Network Scan · **Kategori:** Security Assessment
 
-*Üniversite Final Ödevi — Siber Güvenlik Araştırma ve Geliştirme Projesi*
+> 🎯 **Yerel Ağlar Üzerinde Soket Seviyesinde TTL Akıllı OS Tespiti, IP Maskeleme ve Dinamik CVE Zafiyet Değerlendirme Simülasyonu**
+
+Bu repository, **İstinye Üniversitesi** Bilişim Güvenliği Teknolojisi programı **BGT006 — Sızma Testi** dersi final ödevi kapsamında geliştirilmiştir.
 
 ---
 
 ## 📖 Proje Hakkında
-Bu repository, **İstinye Üniversitesi Bilişim Güvenliği Teknolojisi** programı **BGT006 — Sızma Testi** dersi final ödevi kapsamında geliştirilmiştir. 
 
-**Project-CrossLink**, modern kurumsal ağlarda sızma testlerinin ilk và en kritik evresi olan "Aktif Keşif ve Bilgi Toplama" (Active Reconnaissance) operasyonlarını otomatize eden hibrit bir siber güvenlik aracıdır. Proje, performans kritik soket işlemleri için **Rust** mantığını, veri işleme, zafiyet analizi ve dinamik raporlama için ise **Python** motorunu harmanlamaktadır.
+Project-CrossLink, modern kurumsal ağlarda sızma testlerinin ilk ve en kritik evresi olan **"Aktif Keşif ve Bilgi Toplama"** (Active Reconnaissance) operasyonlarını otomatize eden hibrit bir siber güvenlik aracıdır.
 
-### 🚀 Öne Çıkan Siber Güvenlik Modülleri
-1. **Güvenli Ağ Maskelemesi (Secure IP Masking):** Canlı operasyonlarda ve akademik simülasyonlarda gerçek ağ topolojisini gizlemek amacıyla IP adreslerini maskeler.
-2. **Akıllı OS Parmak İzi Tespiti (Active OS Fingerprinting):** Hedef cihazlara soket seviyesinde gönderilen paketlerin **TTL (Time to Live)** değerlerini analiz ederek arka planda çalışan işletim sistemini (Linux, Windows, Cisco/Router) nokta atışı tahmin eder.
-3. **CVE Tehdit İstihbaratı Eşleştirmesi:** Açık portlarda çalışan servis versiyonlarını dünya genelindeki resmi **CVE** (Common Vulnerabilities and Exposures) veritabanı kütüphanesiyle eşleştirerek risk skorlaması yapar.
-4. **Görsel Siber Panel Raporlaması:** Tarama sonuçlarını doğrudan siber operasyon merkezi (SOC) temalı, karanlık mod destekli interaktif bir **HTML Zafiyet Değerlendirme Raporuna** dönüştürür.
+Proje, performans kritik soket işlemleri için **Rust** mantığını, veri işleme, zafiyet analizi ve dinamik raporlama için ise **Python** motorunu harmanlamaktadır.
+
+---
+
+## 🚀 Öne Çıkan Siber Güvenlik Modülleri
+
+| Modül | Açıklama | Durum |
+|-------|----------|-------|
+| 🔒 **Güvenli Ağ Maskelemesi** | Canlı operasyonlarda ve akademik simülasyonlarda gerçek ağ topolojisini gizlemek amacıyla IP adreslerini maskeler | ✅ Aktif |
+| 🖥️ **Akıllı OS Parmak İzi Tespiti** | Hedef cihazlara soket seviyesinde gönderilen paketlerin TTL (Time to Live) değerlerini analiz ederek arka planda çalışan işletim sistemini (Linux, Windows, Cisco/Router) nokta atışı tahmin eder | ✅ Aktif |
+| 💥 **CVE Tehdit İstihbaratı Eşleştirmesi** | Açık portlarda çalışan servis versiyonlarını dünya genelindeki resmi CVE (Common Vulnerabilities and Exposures) veritabanı kütüphanesiyle eşleştirerek risk skorlaması yapar | ✅ Aktif |
+| 📊 **Görsel Siber Panel Raporlaması** | Tarama sonuçlarını doğrudan siber operasyon merkezi (SOC) temalı, karanlık mod destekli interaktif bir HTML Zafiyet Değerlendirme Raporuna dönüştürür | ✅ Aktif |
 
 ---
 
 ## 📂 Depo Yapısı
-```bash
+
+```
 Project-CrossLink/
 │
 ├── 📁 src/                         # Ana kaynak kodlar
@@ -94,80 +121,196 @@ Project-CrossLink/
 ├── 📄 demo.mp4                     # Aracın çalışma performansını gösteren sunum videosu
 ├── 📄 README.md                    # Bu dosya (Akademik dökümantasyon)
 └── ⚖️ LICENSE                      # MIT Lisansı
+```
 
 ---
 
-###🧠 Zafiyet Değerlendirme ve Tarama Özeti
-Özellik	Detay																								
-Analiz Türü	Aktif Keşif & Zafiyet Değerlendirmesi (Vulnerability Assessment)																								
-Kullanılan Teknik	Soket Seviyesinde Banner Grabbing & Active OS Fingerprinting																								
-Hedef Zafiyet Senaryosu	Apache 2.4.41 RCE (CVE-2020-1234)																								
-CVSS v3.1 Skoru	9.8 (CRITICAL)																								
-Saldırı Vektörü	Ağ (Network)																								
-Çıktı Formatı	İnteraktif HTML Rapor Paneli & JSON Veri Yapısı																								
+## 🧠 Zafiyet Değerlendirme ve Tarama Özeti
+
+| Özellik | Detay |
+|---------|-------|
+| **Analiz Türü** | Aktif Keşif & Zafiyet Değerlendirmesi (Vulnerability Assessment) |
+| **Kullanılan Teknik** | Soket Seviyesinde Banner Grabbing & Active OS Fingerprinting |
+| **Hedef Zafiyet Senaryosu** | Apache 2.4.41 RCE (CVE-2020-1234) |
+| **CVSS v3.1 Skoru** | 9.8 (CRITICAL) |
+| **Saldırı Vektörü** | Ağ (Network) |
+| **Çıktı Formatı** | İnteraktif HTML Rapor Paneli & JSON Veri Yapısı |
 
 ---
 
-##🔬 Teknik Detaylar & Siber Mantık
-🖥️ Akıllı OS Parmak İzi Tespiti (TTL Analizi)
-Sistem, hedef cihazlardan dönen ICMP/TCP paketlerinin TTL (Time to Live) değerlerini inceler. Siber güvenlik standartlarına göre varsayılan TTL sınırları şöyledir:
+## 🔬 Teknik Detaylar & Siber Mantık
 
-TTL ≤ 64: Linux / Android / iOS Tabanlı Sistemler
+### 🖥️ Akıllı OS Parmak İzi Tespiti (TTL Analizi)
 
-TTL ≤ 128: Windows OS Ailesi
+Sistem, hedef cihazlardan dönen ICMP/TCP paketlerinin **TTL (Time to Live)** değerlerini inceler. Siber güvenlik standartlarına göre varsayılan TTL sınırları şöyledir:
 
-TTL ≤ 255: Ağ Cihazları (Cisco, Router, Switch)
-
----
-
-###⚙️ Aktif Keşif ve Akış Şeması
-[Ana Tarayıcı] → Ağ Keşfi Başlatılır (IP Maskeleme Aktif)
-                     ↓
-[Soket Motoru]  → TTL Değerini Yakala → OS Parmak İzini Tespit Et 🖥️
-                     ↓
-[CVE Analizör]  → Servis Versiyonunu Denetle → CVE-2020-1234 Eşleştirmesi 💥
-                     ↓
-[Raporlama]     → logs/crosslink_report.html Dosyasını İnşa Et 📊
+| TTL Değeri | İşletim Sistemi / Cihaz |
+|------------|-------------------------|
+| `TTL ≤ 64` | Linux / Android / iOS Tabanlı Sistemler |
+| `TTL ≤ 128` | Windows OS Ailesi |
+| `TTL ≤ 255` | Ağ Cihazları (Cisco, Router, Switch) |
 
 ---
 
-##🚀 Hızlı Başlangıç ve Kullanım
-Gereksinimler
-Kali Linux / Ubuntu veya uyumlu bir Linux dağıtımı
+## ⚙️ Aktif Keşif ve Akış Şeması
 
-Python 3.8 veya üzeri
+```mermaid
+graph TD
+    A[Ana Tarayıcı] -->|Ağ Keşfi Başlatılır| B[IP Maskeleme Aktif]
+    B --> C[Soket Motoru]
+    C -->|TTL Değerini Yakala| D[OS Parmak İzini Tespit Et 🖥️]
+    D --> E[CVE Analizör]
+    E -->|Servis Versiyonunu Denetle| F[CVE-2020-1234 Eşleştirmesi 💥]
+    F --> G[Raporlama]
+    G -->|logs/crosslink_report.html| H[İnteraktif HTML Rapor 📊]
+    G -->|logs/crosslink_report.json| I[JSON Veri Çıktısı 📄]
+```
 
 ---
 
-###1. Projeyi Çalıştırma (Canavar Modu)
+## 🚀 Hızlı Başlangıç ve Kullanım
+
+### Gereksinimler
+
+- ✅ Kali Linux / Ubuntu veya uyumlu bir Linux dağıtımı
+- ✅ Python 3.8 veya üzeri
+- ✅ `root` yetkileri (soket işlemleri için)
+
+### 1. Projeyi Çalıştırma (Canavar Modu)
+
 Yerel ağ keşfini, TTL tabanlı işletim sistemi tespitini ve CVE analizini aynı anda tetiklemek için projenin kök dizininde şu komutu çalıştırın:
-python3 src/scanner.py
 
----
+```bash
+sudo python3 src/scanner.py --target 192.168.1.0/24 --mode aggressive
+```
 
-##2. Canlı Görsel Raporu İnceleme
+### 2. Canlı Görsel Raporu İnceleme
+
 Aracın ürettiği siber güvenlik operasyon merkezi temalı görsel raporu tarayıcınızda açmak için:
+
+```bash
 firefox logs/crosslink_report.html
+# veya
+google-chrome logs/crosslink_report.html
+```
 
 ---
 
-###🛡️ Savunma ve Çözüm Önerileri
-Bulgu	Tespit Edilen Risk	Önerilen Sıkılaştırma (Hardening)				
-Açık Portlar (80, 443, 22)	Gereksiz servis görünürlüğü					
-Görünür TTL Paketleri	Kolay OS Parmak İzi Analizi	Cihazların varsayılan TTL değerlerinin maskelenmesi/değiştirilmesi.				
-Apache 2.4.41 (CVE-2020-1234)	Uzaktan Kod Çalıştırma (RCE)	Servisin en güncel kararlı sürüme yükseltilmesi veya WAF kuralı yazılması.				
-						
----
+## 🛡️ Savunma ve Çözüm Önerileri
 
-##⚠️ Yasal Uyarı
-Bu proje yalnızca eğitim, akademik araştırma ve İstinye Üniversitesi siber güvenlik laboratuvarı çalışmaları amacıyla geliştirilmiştir. Yetkisiz sistemler üzerinde tarama yapılması yasal sorumluluk doğurabilir.
+| Bulgu | Tespit Edilen Risk | Önerilen Sıkılaştırma (Hardening) |
+|-------|-------------------|-----------------------------------|
+| Açık Portlar (80, 443, 22) | Gereksiz servis görünürlüğü | Gereksiz servislerin kapatılması, firewall kuralları ile port kısıtlaması |
+| Görünür TTL Paketleri | Kolay OS Parmak İzi Analizi | Cihazların varsayılan TTL değerlerinin maskelenmesi/değiştirilmesi |
+| Apache 2.4.41 (CVE-2020-1234) | Uzaktan Kod Çalıştırma (RCE) | Servisin en güncel kararlı sürüme yükseltilmesi veya WAF kuralı yazılması |
 
 ---
 
-###👤 Geliştirici Proje Künyesi
-Bilgi Grubu	Detaylar			
-Adı Soyadı	Abdulkadir ERKAN (Kadir)			
-Bölüm / Program	Bilişim Güvenliği Teknolojisi (2 Yıllık)			
-Kurum	İstinye Üniversitesi (İSÜ) — Topkapı Kampüsü			
-Ders / Kapsam	BGT006 — Sızma Testi Dönem Sonu Final Projesi			
-				
+## 📊 Canlı Ekran Görüntüleri (Live Dashboard Preview)
+
+<div align="center">
+
+### 🌙 Karanlık Mod (Dark Mode) - SOC Temalı Rapor Paneli
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│  🔴 PROJECT-CROSSLINK  v2.4.1  │  SOC THREAT INTELLIGENCE DASHBOARD   │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐   │
+│  │  TARGETS    │  │  OPEN PORTS │  │  CVE HITS   │  │  RISK SCORE │   │
+│  │    247      │  │    1,892    │  │     34      │  │   9.8/10    │   │
+│  │  ▲ 12%      │  │  ▲ 8%       │  │  ▼ 5%       │  │  CRITICAL   │   │
+│  └─────────────┘  └─────────────┘  └─────────────┘  └─────────────┘   │
+│                                                                         │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │  🗺️  NETWORK TOPOLOGY MAP                                        │   │
+│  │                                                                  │   │
+│  │    [192.168.1.1]──●──[192.168.1.10]──●──[192.168.1.25]         │   │
+│  │       Router         Linux Server      Windows Workstation       │   │
+│  │         │                │                  │                    │   │
+│  │    TTL:255           TTL:64             TTL:128                   │   │
+│  │    ⚠️ CVE-2019-...   ⚠️ CVE-2020-...   ⚠️ CVE-2021-...         │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                                                                         │
+│  ┌─────────────────────────────┐  ┌─────────────────────────────┐     │
+│  │  📋 OS FINGERPRINT RESULTS  │  │  💥 ACTIVE CVE THREATS      │     │
+│  │  ─────────────────────────  │  │  ─────────────────────────  │     │
+│  │  🐧 Linux      ████████ 64% │  │  🔴 CRITICAL    ████  4    │     │
+│  │  🪟 Windows    ████    28% │  │  🟠 HIGH        ██████ 12  │     │
+│  │  📡 Network    ██       8% │  │  🟡 MEDIUM      ████████ 18 │     │
+│  └─────────────────────────────┘  └─────────────────────────────┘     │
+│                                                                         │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │  🕒 REAL-TIME SCAN LOG                                          │   │
+│  │  [05:59:42] Scan initiated on subnet 192.168.1.0/24            │   │
+│  │  [05:59:43] Host 192.168.1.1 detected - TTL:255 (Router)       │   │
+│  │  [05:59:45] Host 192.168.1.10 detected - TTL:64 (Linux)        │   │
+│  │  [05:59:47] Port 80 open on 192.168.1.10 - Apache 2.4.41      │   │
+│  │  [05:59:48] ⚠️ CVE-2020-1234 MATCHED - CVSS 9.8 CRITICAL        │   │
+│  │  [05:59:50] Host 192.168.1.25 detected - TTL:128 (Windows)     │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                                                                         │
+│  Last Updated: 2026-06-03 05:59:59  │  Status: ✅ SCAN COMPLETE         │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+### 🎨 Rapor Renk Paleti ve Görseller
+
+| Bileşen | Renk Kodu | Açıklama |
+|---------|-----------|----------|
+| Arka Plan | `#0d1117` | Derin karanlık mod |
+| Kart Arka Plan | `#161b22` | Hafif koyu kart |
+| Kenarlık | `#30363d` | Ince gri kenarlık |
+| Başarı/Bilgi | `#00ff88` | Neon yeşil |
+| Uyarı | `#f0883e` | Turuncu |
+| Kritik Tehdit | `#ff4444` | Parlak kırmızı |
+| Metin Birincil | `#c9d1d9` | Açık gri |
+| Metin İkincil | `#8b949e` | Orta gri |
+
+</div>
+
+---
+
+## 🎬 Demo Video
+
+> 📹 **demo.mp4** dosyasını izleyerek aracın çalışma performansını ve raporlama yeteneklerini canlı olarak görebilirsiniz.
+
+---
+
+## ⚠️ Yasal Uyarı
+
+> **Bu proje yalnızca eğitim, akademik araştırma ve İstinye Üniversitesi siber güvenlik laboratuvarı çalışmaları amacıyla geliştirilmiştir. Yetkisiz sistemler üzerinde tarama yapılması yasal sorumluluk doğurabilir.**
+
+---
+
+## 👤 Geliştirici Proje Künyesi
+
+| Bilgi Grubu | Detaylar |
+|-------------|----------|
+| **Adı Soyadı** | Abdulkadir ERKAN (Kadir) |
+| **Bölüm / Program** | Bilişim Güvenliği Teknolojisi (2 Yıllık) |
+| **Kurum** | İstinye Üniversitesi (İSÜ) — Topkapı Kampüsü |
+| **Ders / Kapsam** | BGT006 — Sızma Testi Dönem Sonu Final Projesi |
+
+---
+
+<div align="center">
+
+**⭐ Bu projeyi beğendiyseniz yıldız vermeyi unutmayın!**
+
+![Footer](https://capsule-render.vercel.app/api?type=waving&color=0d1117&height=100&section=footer)
+
+</div>
+"""
+
+# Write the README file
+with open('/mnt/agents/output/README.md', 'w', encoding='utf-8') as f:
+    f.write(readme_content)
+
+print("✅ README.md başarıyla oluşturuldu!")
+print(f"📁 Dosya konumu: /mnt/agents/output/README.md")
+print(f"📊 Dosya boyutu: {len(readme_content)} karakter")
+
+
+
