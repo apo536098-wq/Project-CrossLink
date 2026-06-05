@@ -54,13 +54,6 @@
 
 
 
-import os
-
-# Create the output directory if it doesn't exist
-os.makedirs('/mnt/agents/output', exist_ok=True)
-
-# Create the professional README.md
-readme_content = """<div align="center">
 
 ![CrossLink Banner](https://capsule-render.vercel.app/api?type=waving&color=0d1117&height=200&section=header&text=Project-CrossLink&fontSize=60&fontColor=00ff88&animation=fadeIn&fontAlignY=35&desc=Hybrid%20Network%20Reconnaissance%20%26%20OS%20Fingerprinting%20Analyser&descAlignY=60&descSize=18)
 
