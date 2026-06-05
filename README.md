@@ -228,7 +228,7 @@ google-chrome logs/crosslink_report.html
 │  ┌─────────────────────────────────────────────────────────────────┐   │
 │  │  🗺️  NETWORK TOPOLOGY MAP                                        │   │
 │  │                                                                  │   │
-│  │    [192.168.1.1]──●──[192.168.1.10]──●──[192.***.1.25]         │   │
+│  │    [192.***.1.1]──●──[192.***.1.10]──●──[192.***.1.25]         │   │
 │  │       Router         Linux Server      Windows Workstation       │   │
 │  │         │                │                  │                    │   │
 │  │    TTL:255           TTL:64             TTL:128                   │   │
@@ -246,11 +246,11 @@ google-chrome logs/crosslink_report.html
 │  ┌─────────────────────────────────────────────────────────────────┐   │
 │  │  🕒 REAL-TIME SCAN LOG                                          │   │
 │  │  [05:59:42] Scan initiated on subnet 192.***.1.0/24            │   │
-│  │  [05:59:43] Host 192.168.1.1 detected - TTL:255 (Router)       │   │
-│  │  [05:59:45] Host 192.168.1.10 detected - TTL:64 (Linux)        │   │
-│  │  [05:59:47] Port 80 open on 192.168.1.10 - Apache 2.4.41      │   │
+│  │  [05:59:43] Host 192.***.1.1 detected - TTL:255 (Router)       │   │
+│  │  [05:59:45] Host 192.***.1.10 detected - TTL:64 (Linux)        │   │
+│  │  [05:59:47] Port 80 open on 192.***.1.10 - Apache 2.4.41      │   │
 │  │  [05:59:48] ⚠️ CVE-2020-1234 MATCHED - CVSS 9.8 CRITICAL        │   │
-│  │  [05:59:50] Host 192.168.1.25 detected - TTL:128 (Windows)     │   │
+│  │  [05:59:50] Host 192.***.1.25 detected - TTL:128 (Windows)     │   │
 │  └─────────────────────────────────────────────────────────────────┘   │
 │                                                                         │
 │  Last Updated: 2026-06-03 05:59:59  │  Status: ✅ SCAN COMPLETE         │
