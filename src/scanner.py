@@ -63,15 +63,15 @@ def maskelenmis_tarama_calistir():
 
     # Hocanın istediği maskelenmiş senaryo verisi
     taranan_cihazlar = [
-        {"maskeli_ip": "10.0.0.1", "gercek_ip": "192.168.1.1", "durum": "Aktif", "portlar": [80, 443]},
-        {"maskeli_ip": "10.0.0.3", "gercek_ip": "192.168.1.15", "durum": "Aktif", "portlar": [139, 445]},
-        {"maskeli_ip": "10.0.0.4", "gercek_ip": "192.168.1.42", "durum": "Aktif", "portlar": [22, 80]}
+        {"maskeli_ip": "10.0.0.1", "gercek_ip": "***.***.*.*", "durum": "Aktif", "portlar": [80, 443]},
+        {"maskeli_ip": "10.0.0.3", "gercek_ip": "***.***.1.**", "durum": "Aktif", "portlar": [139, 445]},
+        {"maskeli_ip": "10.0.0.4", "gercek_ip": "***.***.*.**", "durum": "Aktif", "portlar": [22, 80]}
     ]
 
     for cihaz in taranan_cihazlar:
         # Her cihaz için arka planda OS tespiti yapılıyor (Simülasyonda maskeli hedef elenir)
         # Gerçek siber analizde gercek_ip tetiklenir
-        cihaz["isletim_sistemi"] = isletim_sistemi_tahmin_et("127.0.0.1" if cihaz["maskeli_ip"] == "10.0.0.4" else cihaz["gercek_ip"])
+        cihaz["isletim_sistemi"] = isletim_sistemi_tahmin_et("1**.*.*.1" if cihaz["maskeli_ip"] == "10.0.0.4" else cihaz["gercek_ip"])
         if cihaz["maskeli_ip"] == "10.0.0.4":
             cihaz["isletim_sistemi"] = "Linux / Mobil (Android-iOS)" # Akademik senaryo kilidi
             
